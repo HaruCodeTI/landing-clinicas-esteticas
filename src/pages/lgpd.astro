@@ -1,0 +1,140 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+
+const sections = [
+  { id: 'aiclin-lgpd',     label: 'A AIClin e a LGPD' },
+  { id: 'papeis',          label: 'Papéis e responsabilidades' },
+  { id: 'dados',           label: 'Dados pessoais tratados' },
+  { id: 'bases-legais',    label: 'Bases legais utilizadas' },
+  { id: 'transferencia',   label: 'Transferência internacional' },
+  { id: 'seguranca',       label: 'Medidas de segurança' },
+  { id: 'incidentes',      label: 'Incidentes de segurança' },
+  { id: 'direitos',        label: 'Direitos dos titulares' },
+  { id: 'dpo',             label: 'Encarregado de Dados (DPO)' },
+  { id: 'cfm',             label: 'Conformidade com o CFM' },
+  { id: 'registro',        label: 'Registro de atividades' },
+];
+---
+<LegalLayout
+  title="LGPD — Proteção de Dados"
+  description="Como a AIClin aplica a Lei Geral de Proteção de Dados (Lei nº 13.709/2018) no tratamento de informações de clínicas e pacientes."
+  lastUpdated="02 de Abril de 2026"
+  sections={sections}
+>
+
+  <div class="callout">
+    <p><strong>Conformidade total com a LGPD.</strong> Esta página consolida em um só lugar tudo que você precisa saber sobre seus direitos e como a AIClin trata dados pessoais.</p>
+  </div>
+
+  <h2 id="aiclin-lgpd">1. A AIClin e a LGPD</h2>
+  <p>
+    A Lei Geral de Proteção de Dados (Lei nº 13.709/2018) estabelece regras sobre coleta, armazenamento, tratamento e compartilhamento de dados pessoais no Brasil. A AIClin opera como <strong>operadora</strong> de dados — processamos informações seguindo as instruções das clínicas parceiras, que são as <strong>controladoras</strong>.
+  </p>
+
+  <h2 id="papeis">2. Papéis e responsabilidades</h2>
+  <h3>Clínica (Controladora)</h3>
+  <ul>
+    <li>Define a finalidade do tratamento dos dados dos pacientes</li>
+    <li>É responsável por obter o consentimento adequado dos pacientes quando necessário</li>
+    <li>Deve manter Política de Privacidade própria voltada aos seus pacientes</li>
+    <li>Responde diretamente perante a ANPD como controladora</li>
+  </ul>
+  <h3>AIClin (Operadora)</h3>
+  <ul>
+    <li>Processa dados exclusivamente conforme as instruções da clínica contratante</li>
+    <li>Implementa medidas técnicas e organizacionais de segurança</li>
+    <li>Não utiliza dados de pacientes para finalidades próprias</li>
+    <li>Assina Acordo de Processamento de Dados (DPA) com cada clínica parceira</li>
+    <li>Mantém registro das atividades de tratamento (art. 37 da LGPD)</li>
+  </ul>
+
+  <h2 id="dados">3. Dados pessoais tratados</h2>
+  <h3>3.1 Dados comuns</h3>
+  <ul>
+    <li><strong>Identificação:</strong> nome do paciente, nome do profissional de saúde, nome do gestor</li>
+    <li><strong>Contato:</strong> número de telefone/WhatsApp, e-mail</li>
+    <li><strong>Operacional:</strong> datas de consultas, status de confirmação, histórico de contatos automáticos</li>
+    <li><strong>Acesso:</strong> credenciais de login (hash), logs de acesso ao painel</li>
+  </ul>
+  <h3>3.2 O que NÃO tratamos</h3>
+  <p>
+    A AIClin <strong>não trata dados sensíveis</strong> no sentido do art. 11 da LGPD. Não acessamos nem armazenamos diagnósticos, prontuários, histórico clínico, dados genéticos, biométricos, religiosos, políticos ou de origem racial ou étnica.
+  </p>
+
+  <h2 id="bases-legais">4. Bases legais utilizadas</h2>
+  <ul>
+    <li><strong>Execução de contrato</strong> (art. 7º, V): tratamento necessário para prestar o serviço contratado</li>
+    <li><strong>Legítimo interesse</strong> (art. 7º, IX): segurança da plataforma e melhoria contínua</li>
+    <li><strong>Cumprimento de obrigação legal</strong> (art. 7º, II): quando exigido por autoridade competente</li>
+    <li><strong>Consentimento</strong> (art. 7º, I): para funcionalidades opcionais ou comunicações de marketing</li>
+  </ul>
+
+  <h2 id="transferencia">5. Transferência internacional de dados</h2>
+  <p>
+    A AIClin armazena todos os dados em servidores localizados no <strong>Brasil</strong>. Quando utilizamos suboperadores com infraestrutura internacional, garantimos por contrato que os dados são tratados com nível de proteção equivalente ao exigido pela LGPD (art. 33).
+  </p>
+
+  <h2 id="seguranca">6. Medidas de segurança</h2>
+  <h3>Técnicas</h3>
+  <ul>
+    <li>Criptografia em trânsito (TLS 1.2+) e em repouso (AES-256)</li>
+    <li>Autenticação multifator para administradores</li>
+    <li>Controle de acesso baseado em perfis (RBAC)</li>
+    <li>Backups criptografados com retenção de 90 dias</li>
+    <li>Monitoramento contínuo de vulnerabilidades e testes de penetração periódicos</li>
+  </ul>
+  <h3>Organizacionais</h3>
+  <ul>
+    <li>Treinamento em proteção de dados para toda a equipe</li>
+    <li>Acordo de Confidencialidade (NDA) com colaboradores e suboperadores</li>
+    <li>Política interna de resposta a incidentes de segurança</li>
+  </ul>
+
+  <h2 id="incidentes">7. Incidentes de segurança</h2>
+  <p>Em caso de incidente que possa acarretar risco ou dano relevante, a AIClin se compromete a:</p>
+  <ul>
+    <li>Notificar a clínica controladora em até <strong>72 horas</strong> após a ciência do incidente</li>
+    <li>Fornecer informações sobre a natureza, os dados afetados e as medidas adotadas</li>
+    <li>Apoiar a clínica na comunicação à ANPD e aos titulares quando necessário</li>
+    <li>Documentar o incidente e as ações de remediação</li>
+  </ul>
+
+  <h2 id="direitos">8. Direitos dos titulares</h2>
+  <p>A LGPD garante aos titulares os seguintes direitos (art. 18), exercíveis a qualquer tempo:</p>
+  <ul>
+    <li><strong>Confirmação e acesso</strong> (I e II): saber se seus dados são tratados e ter acesso a eles</li>
+    <li><strong>Correção</strong> (III): dados incompletos, inexatos ou desatualizados</li>
+    <li><strong>Anonimização, bloqueio ou eliminação</strong> (IV): dados desnecessários ou tratados em desconformidade</li>
+    <li><strong>Portabilidade</strong> (V): receber seus dados em formato interoperável</li>
+    <li><strong>Eliminação após revogação</strong> (VI): dados tratados com base em consentimento</li>
+    <li><strong>Informação sobre compartilhamento</strong> (VII): com quem seus dados são compartilhados</li>
+    <li><strong>Negativa de consentimento</strong> (VIII): consequências de não fornecer consentimento</li>
+    <li><strong>Revogação do consentimento</strong> (IX): retirada a qualquer momento</li>
+    <li><strong>Revisão de decisões automatizadas</strong> (art. 20): solicitar revisão humana</li>
+    <li><strong>Petição à ANPD</strong> (§1º): direito de peticionar à Autoridade Nacional</li>
+  </ul>
+
+  <div class="callout">
+    <p><strong>Pacientes de clínicas parceiras</strong> devem exercer seus direitos diretamente com a respectiva clínica (controladora). <strong>Gestores e colaboradores</strong> podem contatar a AIClin em <a href="mailto:privacidade@aiclin.com.br">privacidade@aiclin.com.br</a> — prazo de resposta: até 15 dias úteis.</p>
+  </div>
+
+  <h2 id="dpo">9. Encarregado de Proteção de Dados (DPO)</h2>
+  <p>
+    A AIClin designou um DPO responsável por atender solicitações de titulares, comunicar-se com a ANPD e orientar internamente sobre boas práticas de proteção de dados.
+  </p>
+  <p><strong>Contato do DPO:</strong> <a href="mailto:privacidade@aiclin.com.br">privacidade@aiclin.com.br</a></p>
+
+  <h2 id="cfm">10. Conformidade com o CFM</h2>
+  <p>
+    A AIClin observa as resoluções do Conselho Federal de Medicina (CFM) aplicáveis ao uso de tecnologia na área de saúde, especialmente quanto ao sigilo das informações de saúde dos pacientes e à comunicação eletrônica entre clínica e paciente.
+  </p>
+  <p>
+    A AIClin não acessa prontuários nem dados clínicos, limitando sua atuação à gestão operacional de agenda e comunicação.
+  </p>
+
+  <h2 id="registro">11. Registro de atividades de tratamento</h2>
+  <p>
+    Conforme o art. 37 da LGPD, a AIClin mantém registro interno das operações de tratamento de dados que realiza, disponível para apresentação à ANPD mediante solicitação.
+  </p>
+
+</LegalLayout>

@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import ProofStrip from '../components/ProofStrip.astro';
+import Problems from '../components/Problems.astro';
+import Solution from '../components/Solution.astro';
+import Features from '../components/Features.astro';
+import CaseStudy from '../components/CaseStudy.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Process from '../components/Process.astro';
+import FAQ from '../components/FAQ.astro';
+import CTAFinal from '../components/CTAFinal.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>AIClin — Infraestrutura de IA para Clínicas</title>
+    <meta
+      name="description"
+      content="Reduza faltas, aumente retornos e libere sua equipe com agendamento automático, confirmação via WhatsApp e follow-up de pacientes. Implementação em 7 dias."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content="AIClin — Infraestrutura de IA para Clínicas" />
+    <meta property="og:description" content="Reduza faltas, aumente retornos e libere sua equipe. Implementação em 7 dias." />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#FFFEFC]">
+    <Navbar />
+    <main>
+      <Hero />
+      <ProofStrip />
+      <Problems />
+      <Solution />
+      <Features />
+      <CaseStudy />
+      <Testimonials />
+      <Process />
+      <FAQ />
+      <CTAFinal />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+
+    <script>
+      // Scroll reveal — observa .reveal, .reveal-scale, .reveal-fade, .reveal-number
+      const selectors = ['.reveal', '.reveal-scale', '.reveal-fade', '.reveal-number'];
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      selectors.forEach(sel => {
+        document.querySelectorAll(sel).forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

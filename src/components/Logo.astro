@@ -1,0 +1,27 @@
+---
+interface Props {
+  variant?: 'dark' | 'light';
+}
+const { variant = 'dark' } = Astro.props;
+const textColor = variant === 'light' ? '#FFFFFF' : '#0F3E17';
+const pillBg = variant === 'light' ? 'rgba(255,255,255,0.15)' : '#E1F4DF';
+const pillText = variant === 'light' ? '#FFFFFF' : '#0F3E17';
+---
+<a href="/" class="inline-flex items-center gap-0" aria-label="AIClin — Página inicial">
+  <!-- AI Pill -->
+  <span
+    class="inline-flex items-center justify-center px-[6px] py-[3px] rounded-[6px] text-[18px] leading-normal font-extrabold whitespace-nowrap"
+    style={`background-color: ${pillBg}; color: ${pillText};`}
+  >
+    AI
+  </span>
+  <!-- Gap -->
+  <span class="inline-block w-1" aria-hidden="true"></span>
+  <!-- Clin -->
+  <span
+    class="text-[18px] leading-normal font-light whitespace-nowrap"
+    style={`color: ${textColor};`}
+  >
+    Clin
+  </span>
+</a>

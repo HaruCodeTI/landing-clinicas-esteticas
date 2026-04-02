@@ -1,0 +1,220 @@
+---
+import '../styles/global.css';
+import Logo from '../components/Logo.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  lastUpdated: string;
+  sections: { id: string; label: string }[];
+}
+
+const { title, description, lastUpdated, sections } = Astro.props;
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — AIClin</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#F8FAF8]">
+
+    <!-- ── Navbar ── -->
+    <header class="bg-white border-b border-[#E5E7EB]">
+      <div class="max-w-[1200px] mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
+        <Logo />
+        <a
+          href="/"
+          class="inline-flex items-center gap-1.5 text-[0.875rem] text-[rgba(15,62,23,0.60)] hover:text-[#0F3E17] transition-colors duration-200"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Voltar ao site
+        </a>
+      </div>
+    </header>
+
+    <!-- ── Hero escuro ── -->
+    <div class="bg-[#0F3E17] px-6 sm:px-8 pt-14 pb-16">
+      <div class="max-w-[1200px] mx-auto">
+        <p class="text-[0.75rem] font-semibold tracking-[0.1em] uppercase text-[#B0D8B5] mb-4">
+          Atualizado em {lastUpdated}
+        </p>
+        <h1 class="text-[2.25rem] sm:text-[3rem] font-light text-white leading-[1.15] tracking-[-0.02em] mb-4">
+          {title}
+        </h1>
+        <p class="text-[1rem] leading-[1.75] text-[rgba(255,255,255,0.60)] max-w-[560px]">
+          {description}
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Corpo: sidebar + conteúdo ── -->
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8 py-12">
+      <div class="flex gap-10 items-start">
+
+        <!-- Sidebar com índice -->
+        <aside class="hidden lg:block w-52 flex-shrink-0 sticky top-8">
+          <p class="text-[0.6875rem] font-semibold tracking-[0.1em] uppercase text-[rgba(15,62,23,0.40)] mb-4">
+            Nesta página
+          </p>
+          <nav aria-label="Índice do documento">
+            <ul class="space-y-1">
+              {sections.map((s, i) => (
+                <li>
+                  <a
+                    href={`#${s.id}`}
+                    class="toc-link flex gap-2 text-[0.875rem] text-[rgba(15,62,23,0.60)] hover:text-[#0F3E17] py-1 transition-colors duration-200 leading-snug"
+                  >
+                    <span class="text-[rgba(15,62,23,0.35)] flex-shrink-0">{i + 1}.</span>
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Card de conteúdo -->
+        <main class="flex-1 min-w-0">
+          <div class="bg-white rounded-[16px] border border-[#E5E7EB] px-8 sm:px-12 py-10 legal-content">
+            <slot />
+          </div>
+        </main>
+
+      </div>
+    </div>
+
+    <!-- ── Footer mínimo ── -->
+    <footer class="bg-[#0F3E17] py-8 px-6 sm:px-8 mt-4">
+      <div class="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <Logo variant="light" />
+        <nav class="flex flex-wrap items-center justify-center gap-6" aria-label="Links legais">
+          <a href="/privacidade" class="text-[0.8125rem] text-[rgba(255,255,255,0.50)] hover:text-white transition-colors duration-300">Política de Privacidade</a>
+          <a href="/termos" class="text-[0.8125rem] text-[rgba(255,255,255,0.50)] hover:text-white transition-colors duration-300">Termos de Uso</a>
+          <a href="/lgpd" class="text-[0.8125rem] text-[rgba(255,255,255,0.50)] hover:text-white transition-colors duration-300">LGPD</a>
+        </nav>
+        <p class="text-[0.8125rem] text-[rgba(255,255,255,0.30)]">© 2025 AIClin</p>
+      </div>
+    </footer>
+
+    <!-- Highlight de link ativo no scroll -->
+    <script>
+      const links = document.querySelectorAll<HTMLAnchorElement>('.toc-link');
+      const headings = document.querySelectorAll<HTMLElement>('h2[id]');
+
+      const activate = (id: string) => {
+        links.forEach(l => {
+          const active = l.getAttribute('href') === `#${id}`;
+          l.classList.toggle('text-[#0F3E17]', active);
+          l.classList.toggle('font-medium', active);
+          l.classList.toggle('text-[rgba(15,62,23,0.60)]', !active);
+        });
+      };
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(e => { if (e.isIntersecting) activate(e.target.id); });
+        },
+        { rootMargin: '-20% 0px -70% 0px' }
+      );
+
+      headings.forEach(h => observer.observe(h));
+    </script>
+
+  </body>
+</html>
+
+<style is:global>
+  html { scroll-behavior: smooth; }
+
+  /* ── Tipografia do conteúdo legal ── */
+  .legal-content h2 {
+    font-size: 1.3125rem;
+    font-weight: 500;
+    color: #0F3E17;
+    margin-top: 2.75rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid #E5E7EB;
+    scroll-margin-top: 1.5rem;
+  }
+
+  .legal-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0F3E17;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    scroll-margin-top: 1.5rem;
+  }
+
+  .legal-content p {
+    font-size: 0.9375rem;
+    line-height: 1.85;
+    color: rgba(15, 62, 23, 0.72);
+    margin-bottom: 1rem;
+  }
+
+  .legal-content ul,
+  .legal-content ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .legal-content li {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: rgba(15, 62, 23, 0.72);
+    margin-bottom: 0.35rem;
+  }
+
+  .legal-content ul > li { list-style-type: disc; }
+  .legal-content ol > li { list-style-type: decimal; }
+
+  .legal-content strong {
+    font-weight: 600;
+    color: #0F3E17;
+  }
+
+  .legal-content a {
+    color: #0F3E17;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(15, 62, 23, 0.35);
+  }
+
+  .legal-content a:hover {
+    text-decoration-color: #0F3E17;
+  }
+
+  /* Caixa de destaque (resumo / atenção) */
+  .legal-content .callout {
+    background-color: #F8FAF8;
+    border-left: 3px solid #0F3E17;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .legal-content .callout p {
+    color: #0F3E17;
+    margin-bottom: 0;
+    font-size: 0.9125rem;
+  }
+</style>

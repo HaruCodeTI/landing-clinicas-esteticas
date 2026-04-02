@@ -1,0 +1,71 @@
+---
+const faqs = [
+  {
+    q: 'Preciso trocar o sistema que uso hoje?',
+    a: 'Não. Implementamos em paralelo ao que você já usa — iClinic, Ninsaúde, planilhas ou qualquer outro. Nenhuma migração, nenhuma interrupção na operação.',
+  },
+  {
+    q: 'Como fica a conformidade com LGPD e CFM?',
+    a: 'Todos os dados são criptografados e armazenados no Brasil. O sistema está em plena conformidade com a LGPD e as normas do CFM para uso de tecnologia em saúde.',
+  },
+  {
+    q: 'Minha equipe precisará aprender a usar?',
+    a: 'Não há curva de aprendizagem para a equipe. Sua recepção simplesmente para de fazer o que o sistema faz — confirmar, lembrar e reativar — e tudo acontece automaticamente.',
+  },
+  {
+    q: 'Em quanto tempo começo a ver resultados?',
+    a: 'Na primeira semana já há melhora visível nas confirmações de consulta. O ROI completo — redução de faltas e receita recuperada — aparece em 30 a 60 dias.',
+  },
+  {
+    q: 'Quanto custa o serviço?',
+    a: 'O valor depende do porte e das necessidades da clínica. Discutimos isso na análise gratuita — sem proposta no primeiro contato. Só diagnóstico e entendimento do contexto.',
+  },
+  {
+    q: 'E se não funcionar para a minha clínica?',
+    a: 'Fazemos um diagnóstico honesto antes de qualquer compromisso. Se não identificarmos como gerar resultado concreto, dizemos antes de assinar qualquer coisa.',
+  },
+];
+---
+<section id="faq" class="py-20 px-4 bg-[#F8FAF8]">
+  <div class="max-w-[840px] mx-auto">
+    <div class="text-center mb-12">
+      <div class="reveal inline-flex items-center px-3 py-1.5 rounded-full bg-[#E1F4DF] mb-5">
+        <span class="text-[0.75rem] font-semibold tracking-[0.08em] uppercase text-[#0F3E17]">FAQ</span>
+      </div>
+      <h2 class="reveal reveal-delay-1 text-[2rem] sm:text-[2.5rem] font-light text-[#0F3E17] mb-3">
+        Perguntas frequentes
+      </h2>
+      <p class="reveal reveal-delay-2 text-[0.9375rem] text-[rgba(15,62,23,0.55)]">
+        Tudo que você precisa saber antes de agendar sua análise.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      {faqs.map((faq, i) => (
+        <details
+          class="reveal group bg-white rounded-[12px] border border-[#E5E7EB] overflow-hidden open:border-[#B0D8B5] transition-colors duration-300"
+          style={`transition-delay: ${i * 60}ms`}
+        >
+          <summary class="flex items-center justify-between gap-4 px-8 py-6 cursor-pointer list-none text-[0.9375rem] font-medium text-[#0F3E17] hover:bg-[#F8FAF8] transition-colors duration-200">
+            {faq.q}
+            <svg
+              class="w-5 h-5 text-[rgba(15,62,23,0.35)] flex-shrink-0 transition-transform duration-300 group-open:rotate-45"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+          </summary>
+          <div class="px-8 pb-6 pt-0">
+            <p class="text-[0.9375rem] leading-[1.8] text-[rgba(15,62,23,0.65)]">{faq.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

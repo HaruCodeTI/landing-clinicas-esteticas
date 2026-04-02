@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0F3E17;
+  --color-brand-light: #E1F4DF;
+  --color-brand-mid: #B0D8B5;
+  --color-bg-default: #FFFEFC;
+  --color-bg-subtle: #F8FAF8;
+  --color-border-default: #E5E7EB;
+  --color-border-hover: #B0D8B5;
+  --color-text-primary: #0F3E17;
+  --color-text-secondary: rgba(15, 62, 23, 0.70);
+  --color-text-inverse: #FFFFFF;
+
+  --font-family-sans: 'Inter', Arial, sans-serif;
+
+  --font-size-display: 5.25rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 1.125rem;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 100px;
+
+  --shadow-card-hover: 0 4px 24px rgba(15, 62, 23, 0.08);
+  --shadow-modal: 0 20px 60px rgba(15, 62, 23, 0.15);
+  --shadow-dropdown: 0 8px 32px rgba(15, 62, 23, 0.12);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FFFEFC;
+    color: #0F3E17;
+    font-family: 'Inter', Arial, sans-serif;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* === Scroll Reveal === */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger delays para grupos */
+  .reveal-delay-1 { transition-delay: 100ms; }
+  .reveal-delay-2 { transition-delay: 200ms; }
+  .reveal-delay-3 { transition-delay: 300ms; }
+  .reveal-delay-4 { transition-delay: 400ms; }
+  .reveal-delay-5 { transition-delay: 500ms; }
+
+  /* Scale reveal para cards */
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.96) translateY(16px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  /* Fade only (para elementos que não devem se mover) */
+  .reveal-fade {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .reveal-fade.visible {
+    opacity: 1;
+  }
+
+  /* Número contador — pulse ao entrar */
+  .reveal-number {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal-number.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mobile: desativa transforms, mantém fade */
+  @media (max-width: 480px) {
+    .reveal,
+    .reveal-scale {
+      transform: none;
+      transition: opacity 0.6s ease;
+    }
+    .reveal.visible,
+    .reveal-scale.visible {
+      transform: none;
+    }
+  }
+}

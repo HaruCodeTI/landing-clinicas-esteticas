@@ -1,0 +1,21 @@
+---
+const stats = [
+  { number: '1 em 4', label: 'consultas não acontecem' },
+  { number: 'R$ 50k', label: 'perdidos/ano em no-show' },
+  { number: '65%', label: 'das faltas evitadas com lembrete' },
+  { number: '30 dias', label: 'para ver resultado' },
+];
+---
+<section class="bg-[#F8FAF8] border-y border-[#E5E7EB] py-12 px-4">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
+      {stats.map((stat, i) => (
+        <div class={`reveal-number flex flex-col items-center text-center lg:px-10 ${i < stats.length - 1 ? 'lg:border-r lg:border-[#E5E7EB]' : ''}`}
+             style={`transition-delay: ${i * 120}ms`}>
+          <span class="text-[2.5rem] font-light text-[#0F3E17] leading-[1.1] mb-2">{stat.number}</span>
+          <span class="text-[0.75rem] font-semibold tracking-[0.06em] uppercase text-[rgba(15,62,23,0.55)] leading-tight">{stat.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

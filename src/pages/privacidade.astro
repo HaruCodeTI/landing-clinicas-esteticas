@@ -1,0 +1,129 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+
+const sections = [
+  { id: 'quem-somos',      label: 'Quem somos' },
+  { id: 'dados-coletados', label: 'Dados que coletamos' },
+  { id: 'finalidades',     label: 'Para que usamos os dados' },
+  { id: 'base-legal',      label: 'Base legal' },
+  { id: 'compartilhamento',label: 'Compartilhamento' },
+  { id: 'seguranca',       label: 'Armazenamento e segurança' },
+  { id: 'retencao',        label: 'Retenção de dados' },
+  { id: 'direitos',        label: 'Direitos dos titulares' },
+  { id: 'cookies',         label: 'Cookies' },
+  { id: 'alteracoes',      label: 'Alterações nesta política' },
+  { id: 'contato',         label: 'Contato e DPO' },
+];
+---
+<LegalLayout
+  title="Política de Privacidade"
+  description="Explicamos como coletamos, usamos e protegemos seus dados pessoais ao utilizar os serviços da AIClin."
+  lastUpdated="02 de Abril de 2026"
+  sections={sections}
+>
+
+  <div class="callout">
+    <p><strong>Em resumo:</strong> coletamos apenas o necessário para prestar o serviço, nunca vendemos seus dados e você pode solicitar a exclusão das suas informações a qualquer momento.</p>
+  </div>
+
+  <h2 id="quem-somos">1. Quem somos</h2>
+  <p>
+    A <strong>AIClin</strong> é uma empresa de tecnologia especializada em infraestrutura de IA para clínicas de saúde. Atuamos como <strong>operadora de dados</strong> no sentido da LGPD (Lei nº 13.709/2018), processando informações a serviço das clínicas parceiras (controladoras).
+  </p>
+
+  <h2 id="dados-coletados">2. Dados que coletamos</h2>
+
+  <h3>2.1 Dados de gestores e equipe das clínicas</h3>
+  <ul>
+    <li>Nome completo e cargo</li>
+    <li>Endereço de e-mail profissional</li>
+    <li>Número de telefone / WhatsApp</li>
+    <li>Dados de acesso ao painel (login e credenciais criptografadas)</li>
+    <li>Informações de uso da plataforma (logs de acesso, ações realizadas)</li>
+  </ul>
+
+  <h3>2.2 Dados de pacientes (tratados por conta da clínica)</h3>
+  <ul>
+    <li>Nome e contato (telefone/WhatsApp) para fins de agendamento e comunicação</li>
+    <li>Datas de consultas marcadas, confirmadas ou canceladas</li>
+    <li>Status de retorno e inatividade — sem conteúdo clínico ou prontuário</li>
+  </ul>
+  <p>
+    <strong>Importante:</strong> a AIClin <strong>não</strong> acessa, armazena ou processa prontuários, diagnósticos, prescrições ou qualquer dado clínico sensível.
+  </p>
+
+  <h3>2.3 Dados coletados automaticamente</h3>
+  <ul>
+    <li>Endereço IP e informações de dispositivo ao acessar o painel</li>
+    <li>Cookies de sessão para autenticação</li>
+    <li>Dados de desempenho e erros para melhoria do sistema</li>
+  </ul>
+
+  <h2 id="finalidades">3. Para que usamos os dados</h2>
+  <ul>
+    <li><strong>Execução do serviço:</strong> automatização de agendamentos, confirmações, follow-up e relatórios</li>
+    <li><strong>Suporte e onboarding:</strong> assistência técnica durante a implementação e uso contínuo</li>
+    <li><strong>Relatórios de desempenho:</strong> métricas de no-show, retorno e ocupação para a clínica</li>
+    <li><strong>Segurança:</strong> prevenção de acessos não autorizados e monitoramento de anomalias</li>
+    <li><strong>Melhorias do produto:</strong> análise agregada e anonimizada de padrões de uso</li>
+  </ul>
+  <p>Não utilizamos dados para fins publicitários e não vendemos dados a terceiros.</p>
+
+  <h2 id="base-legal">4. Base legal para o tratamento</h2>
+  <ul>
+    <li><strong>Execução de contrato</strong> (art. 7º, V): dados necessários para prestar o serviço contratado</li>
+    <li><strong>Legítimo interesse</strong> (art. 7º, IX): segurança, prevenção de fraudes e melhoria do sistema</li>
+    <li><strong>Consentimento</strong> (art. 7º, I): para comunicações de marketing ou funcionalidades opcionais</li>
+    <li><strong>Cumprimento de obrigação legal</strong> (art. 7º, II): quando exigido por lei ou autoridade competente</li>
+  </ul>
+
+  <h2 id="compartilhamento">5. Compartilhamento de dados</h2>
+  <p>A AIClin pode compartilhar dados com:</p>
+  <ul>
+    <li><strong>Suboperadores técnicos:</strong> provedores de infraestrutura em nuvem, sempre sob contratos com cláusulas de proteção de dados</li>
+    <li><strong>Autoridades competentes:</strong> quando exigido por lei, ordem judicial ou regulação aplicável</li>
+  </ul>
+
+  <h2 id="seguranca">6. Armazenamento e segurança</h2>
+  <ul>
+    <li>Dados armazenados em servidores localizados no <strong>Brasil</strong></li>
+    <li>Criptografia em trânsito (TLS 1.2+) e em repouso (AES-256)</li>
+    <li>Controle de acesso por perfil e autenticação multifator</li>
+    <li>Backups automáticos com retenção de 90 dias</li>
+    <li>Monitoramento contínuo de acessos e alertas de segurança</li>
+  </ul>
+
+  <h2 id="retencao">7. Retenção de dados</h2>
+  <p>
+    Mantemos os dados pelo tempo necessário à execução do contrato e, após o encerramento, por até <strong>5 anos</strong> para cumprimento de obrigações legais. Dados de pacientes são excluídos conforme solicitação da clínica controladora.
+  </p>
+
+  <h2 id="direitos">8. Direitos dos titulares</h2>
+  <p>Conforme a LGPD, você tem direito a:</p>
+  <ul>
+    <li><strong>Confirmação e acesso:</strong> saber se tratamos seus dados e obter cópia</li>
+    <li><strong>Correção:</strong> solicitar correção de dados incompletos, inexatos ou desatualizados</li>
+    <li><strong>Anonimização ou exclusão:</strong> quando os dados forem desnecessários ou tratados com base em consentimento</li>
+    <li><strong>Portabilidade:</strong> receber seus dados em formato estruturado</li>
+    <li><strong>Revogação do consentimento:</strong> a qualquer tempo, para tratamentos baseados nessa base legal</li>
+    <li><strong>Oposição:</strong> questionar tratamentos realizados sem base legal adequada</li>
+  </ul>
+  <p>Para exercer seus direitos: <a href="mailto:privacidade@aiclin.com.br">privacidade@aiclin.com.br</a></p>
+
+  <h2 id="cookies">9. Cookies</h2>
+  <p>
+    O painel utiliza cookies de sessão estritamente necessários para autenticação. Não utilizamos cookies de rastreamento ou publicidade. Esta landing page pode utilizar cookies de desempenho de forma anonimizada.
+  </p>
+
+  <h2 id="alteracoes">10. Alterações nesta política</h2>
+  <p>
+    Alterações relevantes serão comunicadas às clínicas parceiras por e-mail com antecedência mínima de 15 dias. A versão vigente estará sempre disponível nesta página com a data de última atualização.
+  </p>
+
+  <h2 id="contato">11. Contato e DPO</h2>
+  <p>
+    <strong>Encarregado de Proteção de Dados (DPO):</strong> <a href="mailto:privacidade@aiclin.com.br">privacidade@aiclin.com.br</a><br />
+    <strong>Contato geral:</strong> <a href="mailto:contato@aiclin.com.br">contato@aiclin.com.br</a>
+  </p>
+
+</LegalLayout>

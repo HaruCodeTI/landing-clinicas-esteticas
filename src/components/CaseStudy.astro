@@ -1,0 +1,46 @@
+---
+---
+<section class="py-20 px-4 bg-[#0F3E17]">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="flex flex-col lg:flex-row gap-16 items-start">
+      <!-- Left -->
+      <div class="lg:w-1/2">
+        <div class="reveal inline-flex items-center px-3 py-1.5 rounded-full bg-[rgba(255,255,255,0.10)] mb-6">
+          <span class="text-[0.75rem] font-semibold tracking-[0.08em] uppercase text-[#E1F4DF]">Resultado Real</span>
+        </div>
+        <h2 class="reveal reveal-delay-1 text-[2rem] sm:text-[2.5rem] font-light text-white leading-[1.2] mb-5">
+          Clínica de Psicologia<br>em São Paulo
+        </h2>
+        <p class="reveal reveal-delay-2 text-[0.9375rem] leading-[1.8] text-[rgba(255,255,255,0.60)] mb-3">
+          Antes: 28% de faltas. Confirmações manuais para 35 consultas por semana, consumindo 4h da recepcionista.
+        </p>
+        <blockquote class="reveal reveal-delay-3 border-l-2 border-[rgba(255,255,255,0.20)] pl-6 mt-8">
+          <p class="text-[1rem] italic leading-[1.8] text-[rgba(255,255,255,0.75)] mb-4">
+            "Parece óbvio depois que funciona. O difícil foi acreditar que ia ser tão simples de implementar."
+          </p>
+          <cite class="text-[0.875rem] text-[rgba(255,255,255,0.45)] not-italic">— Dra. Ana Rodrigues, Psicóloga Clínica</cite>
+        </blockquote>
+      </div>
+
+      <!-- Right: metrics -->
+      <div class="lg:w-1/2 flex flex-col gap-4">
+        {[
+          { value: '7%', sub: 'era 28%', label: 'índice de faltas' },
+          { value: 'R$ 3.200', sub: null, label: 'receita adicional por mês' },
+          { value: '60 dias', sub: null, label: 'para resultado completo' },
+        ].map((m, i) => (
+          <div
+            class="reveal-scale bg-[rgba(255,255,255,0.05)] rounded-[16px] p-8 border border-[rgba(255,255,255,0.08)]"
+            style={`transition-delay: ${i * 120}ms`}
+          >
+            <div class="flex items-baseline gap-3 mb-1">
+              <span class="text-[2.75rem] font-light text-white leading-none">{m.value}</span>
+              {m.sub && <span class="text-[0.875rem] text-[rgba(255,255,255,0.35)] line-through">{m.sub}</span>}
+            </div>
+            <p class="text-[0.875rem] text-[rgba(255,255,255,0.50)]">{m.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

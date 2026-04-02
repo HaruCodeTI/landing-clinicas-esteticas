@@ -1,0 +1,50 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Agendamento e confirmação automáticos',
+    text: 'Pacientes agendam via WhatsApp 24h/dia. O sistema confirma 48h antes com 1 clique — sem ligar, sem lembrar manualmente.',
+  },
+  {
+    number: '02',
+    title: 'Acompanhamento e reativação de pacientes',
+    text: 'Follow-up pós-consulta, solicitação de retorno e reativação de inativos com mensagens personalizadas no momento certo.',
+  },
+  {
+    number: '03',
+    title: 'Painel de controle em tempo real',
+    text: 'Confirmações, faltas, retenção e churn num dashboard claro. Relatório mensal enviado automaticamente ao responsável.',
+  },
+];
+---
+<section id="como-funciona" class="py-20 px-4 bg-[#F8FAF8]">
+  <div class="max-w-[1200px] mx-auto">
+    <!-- Header -->
+    <div class="max-w-[640px] mb-16">
+      <div class="reveal inline-flex items-center px-3 py-1.5 rounded-full bg-[#E1F4DF] mb-5">
+        <span class="text-[0.75rem] font-semibold tracking-[0.08em] uppercase text-[#0F3E17]">Como funciona</span>
+      </div>
+      <h2 class="reveal reveal-delay-1 text-[2rem] sm:text-[2.5rem] font-light text-[#0F3E17] mb-4">
+        O que implementamos na sua clínica
+      </h2>
+      <p class="reveal reveal-delay-2 text-[1rem] leading-[1.8] text-[rgba(15,62,23,0.65)]">
+        Não é um software que você aprende. É um sistema que já funciona quando chegamos.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid md:grid-cols-3 gap-12 md:gap-8 md:divide-x md:divide-[#E5E7EB]">
+      {steps.map((step, i) => (
+        <div class={`reveal ${i > 0 ? 'md:pl-8' : ''}`} style={`transition-delay: ${i * 150}ms`}>
+          <span class="block text-[3.5rem] font-light text-[rgba(15,62,23,0.12)] leading-none mb-6 tracking-tight">{step.number}</span>
+          <!-- Icon Pill placeholder — círculo com número -->
+          <div class="w-11 h-11 rounded-[10px] bg-[#E1F4DF] flex items-center justify-center mb-5">
+            <span class="text-[0.75rem] font-semibold text-[#0F3E17]">{step.number}</span>
+          </div>
+          <h3 class="text-[1.0625rem] font-medium text-[#0F3E17] mb-3">{step.title}</h3>
+          <p class="text-[0.9375rem] leading-[1.8] text-[rgba(15,62,23,0.65)]">{step.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

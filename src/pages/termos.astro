@@ -1,0 +1,126 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+
+const sections = [
+  { id: 'objeto',           label: 'Objeto e definições' },
+  { id: 'contratacao',      label: 'Contratação e acesso' },
+  { id: 'responsabilidades-aiclin', label: 'Responsabilidades da AIClin' },
+  { id: 'responsabilidades-cliente', label: 'Responsabilidades do Cliente' },
+  { id: 'restricoes',       label: 'Restrições de uso' },
+  { id: 'pagamento',        label: 'Pagamento e reajustes' },
+  { id: 'propriedade',      label: 'Propriedade intelectual' },
+  { id: 'limitacao',        label: 'Limitação de responsabilidade' },
+  { id: 'rescisao',         label: 'Prazo e rescisão' },
+  { id: 'alteracoes',       label: 'Alterações nos Termos' },
+  { id: 'foro',             label: 'Lei aplicável e foro' },
+];
+---
+<LegalLayout
+  title="Termos de Uso"
+  description="Termos e condições que regem o uso dos serviços e plataforma da AIClin pelas clínicas parceiras."
+  lastUpdated="02 de Abril de 2026"
+  sections={sections}
+>
+
+  <div class="callout">
+    <p><strong>Ao contratar ou utilizar os serviços da AIClin, você concorda com estes termos.</strong> Leia com atenção — eles definem seus direitos e responsabilidades.</p>
+  </div>
+
+  <h2 id="objeto">1. Objeto e definições</h2>
+  <p>
+    Estes Termos de Uso regulam a relação entre a <strong>AIClin</strong> ("Prestadora") e as clínicas, consultórios ou profissionais de saúde que contratam seus serviços ("Cliente"). O serviço compreende:
+  </p>
+  <ul>
+    <li>Implementação e operação de sistema de agendamento e confirmação automática via WhatsApp</li>
+    <li>Follow-up pós-consulta e reativação de pacientes inativos</li>
+    <li>Painel de controle com métricas operacionais</li>
+    <li>Relatórios mensais de desempenho</li>
+    <li>Suporte técnico durante a implementação e operação contínua</li>
+  </ul>
+
+  <h2 id="contratacao">2. Contratação e acesso</h2>
+  <h3>2.1 Elegibilidade</h3>
+  <p>
+    O serviço é destinado exclusivamente a pessoas jurídicas ou profissionais de saúde regularmente registrados nos respectivos conselhos (CRM, CRO, CRP, CREFITO e equivalentes).
+  </p>
+  <h3>2.2 Cadastro</h3>
+  <p>
+    O Cliente é responsável pela veracidade das informações fornecidas no cadastro. Dados incorretos que afetem a prestação do serviço são de responsabilidade exclusiva do Cliente.
+  </p>
+  <h3>2.3 Credenciais de acesso</h3>
+  <p>
+    O acesso ao painel é pessoal e intransferível. O Cliente deve notificar imediatamente a AIClin em caso de acesso não autorizado.
+  </p>
+
+  <h2 id="responsabilidades-aiclin">3. Responsabilidades da AIClin</h2>
+  <ul>
+    <li>Disponibilizar o sistema com disponibilidade mínima de 99% ao mês, excluídas manutenções programadas</li>
+    <li>Garantir a segurança e integridade dos dados conforme a Política de Privacidade</li>
+    <li>Comunicar manutenções programadas com antecedência mínima de 24 horas</li>
+    <li>Prestar suporte técnico de segunda a sexta, 9h–18h, horário de Brasília</li>
+    <li>Não acessar, compartilhar ou utilizar dados de pacientes para fins além dos contratados</li>
+  </ul>
+
+  <h2 id="responsabilidades-cliente">4. Responsabilidades do Cliente</h2>
+  <ul>
+    <li>Obter e manter o consentimento dos pacientes para recebimento de mensagens automatizadas, conforme a LGPD e as orientações do CFM</li>
+    <li>Garantir que os dados de pacientes fornecidos ao sistema estejam corretos e atualizados</li>
+    <li>Utilizar o serviço exclusivamente para finalidades legítimas de gestão clínica</li>
+    <li>Não utilizar o sistema para envio de conteúdo spam, enganoso ou que viole direitos de terceiros</li>
+    <li>Manter em dia o pagamento pela prestação do serviço conforme plano contratado</li>
+  </ul>
+
+  <h2 id="restricoes">5. Restrições de uso</h2>
+  <p>É expressamente vedado ao Cliente:</p>
+  <ul>
+    <li>Sublicenciar, revender ou transferir o acesso ao serviço sem autorização prévia por escrito</li>
+    <li>Realizar engenharia reversa ou tentar acessar o código-fonte da plataforma</li>
+    <li>Utilizar o sistema para coletar dados de pacientes além das finalidades contratadas</li>
+    <li>Interferir na segurança ou integridade da plataforma</li>
+    <li>Usar o serviço em desacordo com a LGPD, o CFM ou qualquer legislação aplicável</li>
+  </ul>
+
+  <h2 id="pagamento">6. Pagamento e reajustes</h2>
+  <p>
+    Os valores do serviço são definidos no contrato individual. O não pagamento no prazo acordado pode resultar em suspensão do acesso após aviso prévio de 5 dias úteis. Reajustes anuais serão comunicados com 30 dias de antecedência.
+  </p>
+
+  <h2 id="propriedade">7. Propriedade intelectual</h2>
+  <p>
+    Todos os direitos sobre a plataforma, algoritmos, interfaces e marca AIClin são de propriedade exclusiva da Prestadora. Os dados gerados pela clínica no uso do sistema pertencem ao Cliente e podem ser exportados a qualquer momento.
+  </p>
+
+  <h2 id="limitacao">8. Limitação de responsabilidade</h2>
+  <p>A AIClin não se responsabiliza por:</p>
+  <ul>
+    <li>Danos decorrentes do uso inadequado do sistema pelo Cliente</li>
+    <li>Falhas causadas por terceiros fora do controle da Prestadora (operadoras de telefonia, plataformas de mensageria)</li>
+    <li>Lucros cessantes ou danos indiretos</li>
+    <li>Dados incorretos fornecidos pelo Cliente</li>
+  </ul>
+  <p>
+    Em nenhuma hipótese a responsabilidade total da AIClin excederá o valor pago pelo Cliente nos últimos 3 meses de serviço.
+  </p>
+
+  <h2 id="rescisao">9. Prazo e rescisão</h2>
+  <h3>9.1 Prazo mínimo</h3>
+  <p>Salvo previsão diferente no contrato, o prazo mínimo de vigência é de 3 meses a partir da data de ativação.</p>
+  <h3>9.2 Cancelamento pelo Cliente</h3>
+  <p>Mediante aviso prévio de 30 dias. Valores já pagos não são reembolsáveis, exceto em casos de descumprimento pela Prestadora.</p>
+  <h3>9.3 Cancelamento pela AIClin</h3>
+  <p>Em caso de violação destes Termos, inadimplência superior a 30 dias ou conduta ilegal pelo Cliente.</p>
+  <h3>9.4 Após o cancelamento</h3>
+  <p>O Cliente terá 30 dias para exportar seus dados. Após esse prazo, os dados serão excluídos conforme a Política de Privacidade.</p>
+
+  <h2 id="alteracoes">10. Alterações nos Termos</h2>
+  <p>
+    A AIClin pode atualizar estes Termos com aviso prévio de 15 dias por e-mail. O uso continuado do serviço implica aceitação dos novos termos.
+  </p>
+
+  <h2 id="foro">11. Lei aplicável e foro</h2>
+  <p>
+    Estes Termos são regidos pelas leis brasileiras. Fica eleito o foro da Comarca de São Paulo, SP, para dirimir quaisquer controvérsias.
+  </p>
+  <p>Dúvidas: <a href="mailto:contato@aiclin.com.br">contato@aiclin.com.br</a></p>
+
+</LegalLayout>

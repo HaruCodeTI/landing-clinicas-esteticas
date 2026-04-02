@@ -1,0 +1,36 @@
+---
+const problems = [
+  {
+    title: 'Horários vazios toda semana',
+    text: '"Paciente confirmou, mas nunca apareceu. E sem avisar. Aquele horário poderia ter sido preenchido."',
+  },
+  {
+    title: 'Paciente veio uma vez, nunca mais voltou',
+    text: '"Atendi bem, mas ele não agendou o retorno. E eu não tenho tempo para ligar para cada um."',
+  },
+  {
+    title: 'Sua clínica para quando uma pessoa sai',
+    text: '"Minha recepcionista faltou e o caos se instalou. Ninguém sabia fazer o que ela faz."',
+  },
+];
+---
+<section class="py-20 px-4 bg-[#FFFEFC]">
+  <div class="max-w-[1200px] mx-auto">
+    <h2 class="reveal text-[2rem] sm:text-[2.5rem] font-light text-[#0F3E17] text-center mb-14">
+      Reconhece alguma dessas situações?
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {problems.map((p, i) => (
+        <div
+          class="reveal-scale bg-white rounded-[16px] p-8 border border-[#E5E7EB] hover:border-[#B0D8B5] hover:shadow-[0_4px_24px_rgba(15,62,23,0.08)] transition-all duration-300"
+          style={`transition-delay: ${i * 120}ms`}
+        >
+          <!-- Accent bar (como no Figma) -->
+          <div class="w-1 h-8 rounded-full bg-[#E1F4DF] mb-8"></div>
+          <h3 class="text-[1.0625rem] font-medium text-[#0F3E17] mb-4">{p.title}</h3>
+          <p class="text-[0.9375rem] leading-[1.8] text-[rgba(15,62,23,0.65)] italic">{p.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,68 @@
+---
+const steps = [
+  {
+    number: '1',
+    week: 'Semana 0',
+    title: 'Análise gratuita',
+    text: 'Conversa de 30 min para entender sua clínica, seus gargalos e o que é possível resolver. Sem compromisso.',
+  },
+  {
+    number: '2',
+    week: 'Semana 1',
+    title: 'Configuração personalizada',
+    text: '1 semana de setup: integramos com seu sistema atual, configuramos fluxos e aprovamos as mensagens com você.',
+  },
+  {
+    number: '3',
+    week: 'Semana 2',
+    title: 'Ativação acompanhada',
+    text: 'Primeira semana com suporte ativo da nossa equipe. Ajustamos tudo em tempo real conforme a clínica opera.',
+  },
+  {
+    number: '4',
+    week: 'Mês 2+',
+    title: 'Resultados e ajuste contínuo',
+    text: 'Monitoramento mensal, relatório de desempenho e otimizações contínuas para manter e melhorar os resultados.',
+  },
+];
+---
+<section class="py-20 px-4 bg-[#FFFEFC]">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="text-center mb-14">
+      <div class="reveal inline-flex items-center px-3 py-1.5 rounded-full bg-[#E1F4DF] mb-5">
+        <span class="text-[0.75rem] font-semibold tracking-[0.08em] uppercase text-[#0F3E17]">Implementação</span>
+      </div>
+      <h2 class="reveal reveal-delay-1 text-[2rem] sm:text-[2.5rem] font-light text-[#0F3E17] mb-3">
+        Da conversa ao resultado em 4 passos
+      </h2>
+      <p class="reveal reveal-delay-2 text-[0.9375rem] text-[rgba(15,62,23,0.55)]">
+        Implementação média: 7 a 14 dias. Sem mudança de sistema. Sem treinamento longo.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-10 relative">
+      <!-- Connector line (desktop only) -->
+      <div class="hidden lg:block absolute top-6 left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] h-px bg-[#E5E7EB]" aria-hidden="true"></div>
+
+      {steps.map((step, i) => (
+        <div class="reveal" style={`transition-delay: ${i * 120}ms`}>
+          <div class="relative flex items-center justify-start mb-5">
+            <div class="w-12 h-12 rounded-full bg-[#E1F4DF] flex items-center justify-center text-[#0F3E17] text-[1rem] font-semibold z-10 relative">
+              {step.number}
+            </div>
+          </div>
+          <!-- Week tag -->
+          <div class="inline-flex items-center px-2.5 py-1 rounded-full bg-[#F8FAF8] border border-[#E5E7EB] mb-3">
+            <span class="text-[0.75rem] font-medium text-[rgba(15,62,23,0.55)]">{step.week}</span>
+          </div>
+          <h3 class="text-[1.0625rem] font-medium text-[#0F3E17] mb-2">{step.title}</h3>
+          <p class="text-[0.875rem] leading-[1.75] text-[rgba(15,62,23,0.60)]">{step.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="reveal text-center text-[0.875rem] text-[rgba(15,62,23,0.45)]">
+      ✓ Sem mudança de sistema &nbsp;·&nbsp; ✓ Sem treinamento longo &nbsp;·&nbsp; ✓ Suporte durante toda a implementação
+    </p>
+  </div>
+</section>

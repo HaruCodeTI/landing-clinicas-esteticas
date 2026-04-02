@@ -1,0 +1,61 @@
+---
+import Logo from './Logo.astro';
+---
+<footer class="bg-[#0F3E17] pt-16 pb-10 px-4">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="grid md:grid-cols-[1fr_auto_auto] gap-12 md:gap-16 mb-12">
+      <!-- Brand col -->
+      <div>
+        <div class="mb-4">
+          <Logo variant="light" />
+        </div>
+        <p class="text-[0.875rem] leading-[1.7] text-[rgba(255,255,255,0.50)] max-w-[320px]">
+          Infraestrutura de IA para clínicas que querem crescer sem depender de mais pessoas.
+        </p>
+      </div>
+
+      <!-- Links col -->
+      <div>
+        <p class="text-[0.75rem] font-semibold tracking-[0.08em] uppercase text-[rgba(255,255,255,0.35)] mb-5">Produto</p>
+        <ul class="space-y-3">
+          <li><a href="#como-funciona" class="text-[0.875rem] text-[rgba(255,255,255,0.60)] hover:text-white transition-colors duration-300">Como funciona</a></li>
+          <li><a href="#resultados" class="text-[0.875rem] text-[rgba(255,255,255,0.60)] hover:text-white transition-colors duration-300">Resultados</a></li>
+          <li><a href="#faq" class="text-[0.875rem] text-[rgba(255,255,255,0.60)] hover:text-white transition-colors duration-300">FAQ</a></li>
+          <li><a href="/privacidade" class="text-[0.875rem] text-[rgba(255,255,255,0.60)] hover:text-white transition-colors duration-300">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact col -->
+      <div>
+        <p class="text-[0.75rem] font-semibold tracking-[0.08em] uppercase text-[rgba(255,255,255,0.35)] mb-5">Contato</p>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="https://wa.me/5511999999999"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-[0.875rem] text-[rgba(255,255,255,0.60)] hover:text-white transition-colors duration-300"
+            >
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:contato@aiclin.com.br"
+              class="text-[0.875rem] text-[rgba(255,255,255,0.60)] hover:text-white transition-colors duration-300"
+            >
+              contato@aiclin.com.br
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-[rgba(255,255,255,0.10)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-[0.8125rem] text-[rgba(255,255,255,0.35)]">
+        © 2025 AIClin. Todos os direitos reservados. LGPD compliant.
+      </p>
+    </div>
+  </div>
+</footer>
